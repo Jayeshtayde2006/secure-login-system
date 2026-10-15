@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Admin | SecureGate{% endblock %}{% block content %}
+<section class="welcome"><p class="eyebrow">SECUREGATE / ADMIN</p><h1>Admin console</h1><p>Only ADMIN accounts can view this page.</p></section>
+<section class="card table-card"><h2>Registered users</h2><div class="table-wrap"><table><thead><tr><th>ID</th><th>Username</th><th>Email</th><th>Role</th><th>Created</th></tr></thead><tbody>
+{% for user in users %}<tr><td>{{ user.id }}</td><td>{{ user.username }}</td><td>{{ user.email }}</td><td><span class="pill">{{ user.role }}</span></td><td>{{ user.created_at }}</td></tr>{% else %}<tr><td colspan="5">No users found.</td></tr>{% endfor %}</tbody></table></div></section>
+<section class="card table-card"><h2>Recent login events</h2><div class="table-wrap"><table><thead><tr><th>ID</th><th>Username</th><th>Event</th><th>Time</th><th>IP address</th></tr></thead><tbody>
+{% for event in events %}<tr><td>{{ event.id }}</td><td>{{ event.username }}</td><td>{{ event.event_type }}</td><td>{{ event.event_time }}</td><td>{{ event.ip_address or '—' }}</td></tr>{% else %}<tr><td colspan="5">No events found.</td></tr>{% endfor %}</tbody></table></div></section>{% endblock %}

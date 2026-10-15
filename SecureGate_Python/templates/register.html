@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Register | SecureGate{% endblock %}{% block content %}
+<section class="card auth-card"><div class="shield">🛡</div><h1>Create account</h1><p class="muted">Register to get started with SecureGate.</p>
+<form method="post" class="stack"><label>Username<input name="username" required maxlength="80"></label>
+<label>Email<input type="email" name="email" required maxlength="150"></label><label>Password <span class="hint">(at least 8 characters)</span><input type="password" name="password" minlength="8" required></label>
+<button class="primary">Create account</button></form><p class="muted center">Already registered? <a href="{{ url_for('login') }}">Login</a></p></section>{% endblock %}

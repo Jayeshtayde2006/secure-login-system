@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Dashboard | SecureGate{% endblock %}{% block content %}
+<section class="welcome"><p class="eyebrow">SECUREGATE / DASHBOARD</p><h1>Hello, {{ session.get('username') }}!</h1><p>You are logged in. Your account is protected by authenticated access.</p></section>
+<div class="grid"><article class="card"><div class="tile-icon">🔐</div><h2>Secure authentication</h2><p class="muted">Passwords are stored as BCrypt hashes, not plain text.</p></article>
+<article class="card"><div class="tile-icon">👤</div><h2>Your account</h2><p><strong>Username:</strong> {{ session.get('username') }}</p><p><strong>Email:</strong> {{ session.get('email') }}</p><p><strong>Role:</strong> {{ session.get('role') }}</p></article>
+<article class="card"><div class="tile-icon">🧾</div><h2>Activity tracking</h2><p class="muted">Successful logins, failed logins, and logouts are recorded.</p></article></div>{% endblock %}

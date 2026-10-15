@@ -1,1 +1,7 @@
 Flask>=3.0,<4.0\nmysql-connector-python>=9.0,<10.0\nbcrypt>=4.1,<6.0\n
+
+
+Flask
+mysql-connector-python
+bcrypt
+gunicorn
